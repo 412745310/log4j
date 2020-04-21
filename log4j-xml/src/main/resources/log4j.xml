@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="app" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="C:/Users/Administrator/Desktop/log/audit" />
+		<param name="Encoding" value="GB2312" />
+		<param name="DatePattern" value="'_'yyyy_MM_dd_HH_mm_00'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+	<!-- 指定具体类的日志打印规则，也可以指定目录 -->
+	<logger name="com.chelsea.log4j.xml.App" additivity="false">
+		<level value="info" />
+		<appender-ref ref="app" />
+	</logger>
+	<root>
+		<level value="info"/>
+	</root>
+</log4j:configuration>
